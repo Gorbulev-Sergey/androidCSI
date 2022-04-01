@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="pink_high_light">#ddbec3</color>
+    <color name="pink_light">#cc9da5</color>
+    <color name="pink_lightly">#ba7b85</color>
+    <color name="pink">#a85b68</color>
+    <color name="pink_darkly">#a85b68</color>
+    <color name="pink_dark">#693740</color>
+    <color name="pink_high_dark">#47252b</color>
+
+    <color name="green_high_light">#c5edd3</color>
+    <color name="green_light">#9de0b4</color>
+    <color name="green_lightly">#77d496</color>
+    <color name="green">#50c878</color>
+    <color name="green_darkly">#37ad5f</color>
+    <color name="green_dark">#2b874a</color>
+    <color name="green_high_dark">#1f6135</color>
+
+    <color name="orange_high_light">#fff0cc</color>
+    <color name="orange_light">#ffe099</color>
+    <color name="orange_lightly">#ffd166</color>
+    <color name="orange">#ffc233</color>
+    <color name="orange_darkly">#ffb300</color>
+    <color name="orange_dark">#cc8f00</color>
+    <color name="orange_high_dark">#996b00</color>
+
+    <color name="gray_white">#e8e8e8</color>
+    <color name="gray_high_light">#cfcfcf</color>
+    <color name="gray_light">#b5b5b5</color>
+    <color name="gray_lightly">#9c9c9c</color>
+    <color name="gray">#828282</color>
+    <color name="gray_darkly">#696969</color>
+    <color name="gray_dark">#4f4f4f</color>
+    <color name="gray_high_dark">#363636</color>
+    <color name="gray_black">#1c1c1c</color>
+</resources>
