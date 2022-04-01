@@ -49,6 +49,11 @@
         <item name="colorOnSecondary">@color/gray_black</item>
     </style>
 
+    <style name="Theme.AndroidCSI.Pink.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/pink_high_dark</item>
+        <item name="colorControlNormal">@color/pink_high_dark</item>
+    </style>
+
     <style name="Theme.AndroidCSI.Green.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:textColorPrimary">@color/green_high_dark</item>
         <item name="colorControlNormal">@color/green_high_dark</item>

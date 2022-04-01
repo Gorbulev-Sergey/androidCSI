@@ -23,18 +23,18 @@ public class highRatingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_high_rating, container, false);
+        textResult = view.findViewById(R.id.textResult);
 
-        pickerLowRating = (NumberPicker) view.findViewById(R.id.picker_low_rating);
+        pickerLowRating = view.findViewById(R.id.picker_low_rating);
         pickerLowRating.setMinValue(0);
         pickerLowRating.setMaxValue(100);
-        pickerCSI = (NumberPicker) view.findViewById(R.id.picker_CSI);
+        pickerCSI = view.findViewById(R.id.picker_CSI);
         pickerCSI.setMinValue(0);
         pickerCSI.setMaxValue(99);
 
         pickerLowRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult = view.findViewById(R.id.textResult);
                 textResult.setText(Integer.toString(getResult(pickerLowRating.getValue(), pickerCSI.getValue())));
             }
         });
@@ -42,7 +42,6 @@ public class highRatingFragment extends Fragment {
         pickerCSI.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult = view.findViewById(R.id.textResult);
                 textResult.setText(Integer.toString(getResult(pickerLowRating.getValue(), pickerCSI.getValue())));
             }
         });
@@ -50,7 +49,7 @@ public class highRatingFragment extends Fragment {
         return view;
     }
 
-    public int getResult(int LowRating, int CSI) {
+    private int getResult(int LowRating, int CSI) {
         return (LowRating * (100 + CSI)) / (100 - CSI);
     }
 }
