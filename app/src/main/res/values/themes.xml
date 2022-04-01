@@ -48,4 +48,14 @@
         <item name="colorSecondaryVariant">@color/gray_high_dark</item>
         <item name="colorOnSecondary">@color/gray_black</item>
     </style>
+
+    <style name="Theme.AndroidCSI.Green.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/green_high_dark</item>
+        <item name="colorControlNormal">@color/green_high_dark</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Orange.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/orange_high_dark</item>
+        <item name="colorControlNormal">@color/orange_high_dark</item>
+    </style>
 </resources>
