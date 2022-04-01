@@ -27,10 +27,10 @@ public class highRatingFragment extends Fragment {
 
         pickerLowRating = view.findViewById(R.id.picker_low_rating);
         pickerLowRating.setMinValue(0);
-        pickerLowRating.setMaxValue(100);
+        pickerLowRating.setMaxValue(200);
         pickerCSI = view.findViewById(R.id.picker_CSI);
         pickerCSI.setMinValue(0);
-        pickerCSI.setMaxValue(99);
+        pickerCSI.setMaxValue(100);
 
         pickerLowRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -50,6 +50,10 @@ public class highRatingFragment extends Fragment {
     }
 
     private int getResult(int LowRating, int CSI) {
-        return (LowRating * (100 + CSI)) / (100 - CSI);
+        try {
+            return  (LowRating * (100 + CSI)) / (100 - CSI);
+        }
+        catch (Exception e){}
+        return 0;
     }
 }

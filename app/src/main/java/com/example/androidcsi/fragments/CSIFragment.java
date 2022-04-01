@@ -25,11 +25,11 @@ public class CSIFragment extends Fragment {
         textResult = view.findViewById(R.id.textCSI);
 
         pickerHighRating = view.findViewById(R.id.picker_high_rating);
-        pickerHighRating.setMinValue(1);
-        pickerHighRating.setMaxValue(100);
+        pickerHighRating.setMinValue(0);
+        pickerHighRating.setMaxValue(200);
         pickerLowRating = view.findViewById(R.id.picker_low_rating);
-        pickerLowRating.setMinValue(1);
-        pickerLowRating.setMaxValue(100);
+        pickerLowRating.setMinValue(0);
+        pickerLowRating.setMaxValue(200);
 
         pickerHighRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -50,6 +50,10 @@ public class CSIFragment extends Fragment {
     }
 
     private int getResult(int LowRating, int HighRating) {
-        return (100 * (HighRating - LowRating) % (HighRating + LowRating)) < .5 ? 100 * (HighRating - LowRating) / (HighRating + LowRating) : 100 * (HighRating - LowRating) / (HighRating + LowRating) + 1;
+        try {
+            return (100 * (HighRating - LowRating) % (HighRating + LowRating)) < .5 ? 100 * (HighRating - LowRating) / (HighRating + LowRating) : 100 * (HighRating - LowRating) / (HighRating + LowRating) + 1;
+        }
+        catch (Exception e){}
+        return 0;
     }
 }
