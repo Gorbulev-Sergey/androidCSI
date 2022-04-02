@@ -62,6 +62,32 @@
         <item name="colorOnSecondary">@color/gray_black</item>
     </style>
 
+    <style name="Theme.AndroidCSI.Violet" parent="Theme.AndroidCSI">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/gray_purpul_blue</item>
+        <item name="colorPrimaryVariant">@color/gray_purpul_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purpul_blue</item>
+        <item name="colorSecondaryVariant">@color/purpul_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="colorTertiary">@color/violet</item>
+        <item name="colorOnTertiary">@color/white</item>
+
+        <item name="colorAccent">@color/rouse</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Violet.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/violet</item>
+        <item name="colorControlNormal">@color/violet</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.PurpulBlue.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/purpul_blue</item>
+        <item name="colorControlNormal">@color/purpul_blue</item>
+    </style>
+
     <style name="Theme.AndroidCSI.Red.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:textColorPrimary">@color/red_dark</item>
         <item name="colorControlNormal">@color/red_dark</item>

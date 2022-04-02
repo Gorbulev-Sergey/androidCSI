@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        app:titleTextColor="?attr/colorOnPrimary"
+        app:titleTextColor="@color/magnolia"
         app:subtitleTextColor="?attr/colorSecondary"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="40dp"
+        android:background="@color/magnolia"
         android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
@@ -29,6 +30,11 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
+            android:background="@color/magnolia"
+            app:tabBackground="@color/purpul_blue"
+            app:tabIndicatorColor="@color/rouse"
+            app:tabSelectedTextColor="@color/rouse"
+            app:tabTextColor="@color/magnolia"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"/>
