@@ -34,14 +34,14 @@ public class CSIFragment extends Fragment {
         pickerHighRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult.setText(Integer.toString(getResult(pickerLowRating.getValue(), pickerHighRating.getValue())));
+                textResult.setText(Integer.toString(getResult(pickerHighRating.getValue(), pickerLowRating.getValue())));
             }
         });
 
         pickerLowRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult.setText(Integer.toString(getResult(pickerLowRating.getValue(), pickerHighRating.getValue())));
+                textResult.setText(Integer.toString(getResult(pickerHighRating.getValue(), pickerLowRating.getValue())));
             }
         });
 
@@ -49,11 +49,10 @@ public class CSIFragment extends Fragment {
         return view;
     }
 
-    private int getResult(int LowRating, int HighRating) {
-        try {
-            return (100 * (HighRating - LowRating) % (HighRating + LowRating)) < .5 ? 100 * (HighRating - LowRating) / (HighRating + LowRating) : 100 * (HighRating - LowRating) / (HighRating + LowRating) + 1;
-        }
-        catch (Exception e){}
-        return 0;
+    private int getResult(double HighRating, double LowRating) {
+        if ((HighRating + LowRating) != 0) {
+            double result = 100 * (HighRating - LowRating) / (HighRating + LowRating);
+            return (int) Math.round(result);
+        } else return 0;
     }
 }

@@ -14,8 +14,8 @@ import com.example.androidcsi.R;
 
 public class kpeFragment extends Fragment {
     View view;
-    NumberPicker pickerHighTalon;
-    NumberPicker pickerLowTalon;
+    NumberPicker pickerGreenTalon;
+    NumberPicker pickerRedTalon;
     TextView textResult;
 
     @Override
@@ -24,24 +24,24 @@ public class kpeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_kpe, container, false);
         textResult = view.findViewById(R.id.textKPE);
 
-        pickerHighTalon = view.findViewById(R.id.picker_high_rating);
-        pickerHighTalon.setMinValue(0);
-        pickerHighTalon.setMaxValue(100);
-        pickerLowTalon = view.findViewById(R.id.picker_low_rating);
-        pickerLowTalon.setMinValue(0);
-        pickerLowTalon.setMaxValue(100);
+        pickerGreenTalon = view.findViewById(R.id.picker_high_rating);
+        pickerGreenTalon.setMinValue(0);
+        pickerGreenTalon.setMaxValue(100);
+        pickerRedTalon = view.findViewById(R.id.picker_low_rating);
+        pickerRedTalon.setMinValue(0);
+        pickerRedTalon.setMaxValue(100);
 
-        pickerHighTalon.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        pickerGreenTalon.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult.setText(Integer.toString(getResult(pickerLowTalon.getValue(), pickerHighTalon.getValue())));
+                textResult.setText(Integer.toString(getResult(pickerGreenTalon.getValue(), pickerRedTalon.getValue())));
             }
         });
 
-        pickerLowTalon.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        pickerRedTalon.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                textResult.setText(Integer.toString(getResult(pickerLowTalon.getValue(), pickerHighTalon.getValue())));
+                textResult.setText(Integer.toString(getResult(pickerGreenTalon.getValue(), pickerRedTalon.getValue())));
             }
         });
 
@@ -49,12 +49,10 @@ public class kpeFragment extends Fragment {
         return view;
     }
 
-    private int getResult(int LowTalon, int HighTalon) {
-        try{
-            return (HighTalon*100)%(HighTalon+LowTalon)<.5?(HighTalon*100)/(HighTalon+LowTalon):(HighTalon*100)/(HighTalon+LowTalon)+1;
-        }
-        catch (Exception e){}
-        return 0;
-
+    private int getResult(double GreenTalons, double RedTalons) {
+        if ((GreenTalons + RedTalons) != 0) {
+            double result = 100 * GreenTalons / (GreenTalons + RedTalons);
+            return (int) Math.round(result);
+        } else return 0;
     }
 }
