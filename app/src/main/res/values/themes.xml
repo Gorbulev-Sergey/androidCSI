@@ -18,9 +18,9 @@
 
     <style name="Theme.AndroidCSI.Pink" parent="Theme.AndroidCSI">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/pink_dark</item>
+        <item name="colorPrimary">@color/pink_high_dark</item>
         <item name="colorPrimaryVariant">@color/pink</item>
-        <item name="colorOnPrimary">@color/pink_high_light</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/pink_lightly</item>
         <item name="colorSecondaryVariant">@color/pink_light</item>
@@ -29,13 +29,26 @@
 
     <style name="Theme.AndroidCSI.Green" parent="Theme.AndroidCSI">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/green_high_dark</item>
-        <item name="colorPrimaryVariant">@color/green_dark</item>
-        <item name="colorOnPrimary">@color/green_high_light</item>
+        <item name="colorPrimary">@color/green_high_light</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">@color/green_dark</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gray_darkly</item>
         <item name="colorSecondaryVariant">@color/gray_high_dark</item>
         <item name="colorOnSecondary">@color/gray_black</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Gray" parent="Theme.AndroidCSI">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/gray_high_dark</item>
+        <item name="colorOnPrimary">@color/gray_black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/gray_white</item>
+        <item name="colorSecondaryVariant">@color/gray_high_dark</item>
+        <item name="colorOnSecondary">@color/gray_black</item>
+
+        <item name="statusBarForeground">@color/gray_black</item>
     </style>
 
     <style name="Theme.AndroidCSI.Orange" parent="Theme.AndroidCSI">
@@ -47,6 +60,11 @@
         <item name="colorSecondary">@color/gray_darkly</item>
         <item name="colorSecondaryVariant">@color/gray_high_dark</item>
         <item name="colorOnSecondary">@color/gray_black</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Red.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/red_dark</item>
+        <item name="colorControlNormal">@color/red_dark</item>
     </style>
 
     <style name="Theme.AndroidCSI.Pink.Picker" parent="Theme.AppCompat.Light.NoActionBar" >

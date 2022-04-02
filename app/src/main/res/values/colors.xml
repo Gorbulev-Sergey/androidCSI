@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="red_high_light">#ff9999</color>
+    <color name="red_light">#ff6666</color>
+    <color name="red_lightly">#ff3333</color>
+    <color name="red">#ff0000</color>
+    <color name="red_darkly">#cc0000</color>
+    <color name="red_dark">#990000</color>
+    <color name="red_high_dark">#660000</color>
 
     <color name="pink_high_light">#ddbec3</color>
     <color name="pink_light">#cc9da5</color>
@@ -24,6 +31,14 @@
     <color name="green_darkly">#37ad5f</color>
     <color name="green_dark">#2b874a</color>
     <color name="green_high_dark">#1f6135</color>
+
+    <color name="blue_high_light">#66b0ff</color>
+    <color name="blue_light">#3396ff</color>
+    <color name="blue_lightly">#007bff</color>
+    <color name="blue">#0063cc</color>
+    <color name="blue_darkly">#004a99</color>
+    <color name="blue_dark">#003166</color>
+    <color name="blue_high_dark">#001933</color>
 
     <color name="orange_high_light">#fff0cc</color>
     <color name="orange_light">#ffe099</color>

@@ -39,15 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         toolbar.setTitle("CSI");
-                        toolbar.setSubtitle("Расчёт CSI");
+                        //toolbar.setSubtitle("Расчёт CSI");
                         break;
                     case 1:
                         toolbar.setTitle("Высокие оценки");
-                        toolbar.setSubtitle("Расчёт количества высоких оценок");
+                        //toolbar.setSubtitle("Расчёт количества высоких оценок");
                         break;
                     case 2:
                         toolbar.setTitle("КПЭ");
-                        toolbar.setSubtitle("Расчёт КПЭ");
+                        //toolbar.setSubtitle("Расчёт КПЭ");
                         break;
                 }
             }

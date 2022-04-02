@@ -3,16 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".fragments.CSIFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_weight="1"
-        android:background="?attr/colorSecondary"
+        android:background="@drawable/radius_blue"
         android:gravity="center"
-        android:minHeight="250dp"
-        android:padding="18dp">
+        android:minHeight="250dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textColor="?attr/colorOnSecondary"
+            android:textColor="@color/blue_dark"
             android:textSize="32sp" />
 
         <TextView
@@ -38,8 +38,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="18dp"
-        android:gravity="center"
+        android:gravity="top"
+        android:paddingTop="45dp"
         android:layout_weight="2">
 
         <LinearLayout
@@ -52,14 +52,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/pink_high_dark"
+                android:textColor="@color/green_high_dark"
                 android:text="Высокие\nоценки:" />
 
             <NumberPicker
                 android:id="@+id/picker_high_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.Pink.Picker"/>
+                android:theme="@style/Theme.AndroidCSI.Green.Picker"/>
         </LinearLayout>
 
         <LinearLayout
@@ -72,14 +72,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/green_high_dark"
+                android:textColor="@color/red_dark"
                 android:text="Низкие\nоценки:" />
 
             <NumberPicker
                 android:id="@+id/picker_low_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.Green.Picker"/>
+                android:theme="@style/Theme.AndroidCSI.Red.Picker"/>
         </LinearLayout>
 
     </LinearLayout>

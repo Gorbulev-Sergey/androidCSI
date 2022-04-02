@@ -26,10 +26,10 @@ public class kpeFragment extends Fragment {
 
         pickerHighTalon = view.findViewById(R.id.picker_high_rating);
         pickerHighTalon.setMinValue(0);
-        pickerHighTalon.setMaxValue(200);
+        pickerHighTalon.setMaxValue(100);
         pickerLowTalon = view.findViewById(R.id.picker_low_rating);
         pickerLowTalon.setMinValue(0);
-        pickerLowTalon.setMaxValue(200);
+        pickerLowTalon.setMaxValue(100);
 
         pickerHighTalon.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override

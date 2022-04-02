@@ -26,10 +26,10 @@ public class CSIFragment extends Fragment {
 
         pickerHighRating = view.findViewById(R.id.picker_high_rating);
         pickerHighRating.setMinValue(0);
-        pickerHighRating.setMaxValue(200);
+        pickerHighRating.setMaxValue(100);
         pickerLowRating = view.findViewById(R.id.picker_low_rating);
         pickerLowRating.setMinValue(0);
-        pickerLowRating.setMaxValue(200);
+        pickerLowRating.setMaxValue(100);
 
         pickerHighRating.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
