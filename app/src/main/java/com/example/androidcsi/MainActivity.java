@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Высокие оценки");
         setSupportActionBar(toolbar);
+        tabs = findViewById(R.id.tabs);
 
         pager = findViewById(R.id.pager);
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -40,14 +41,26 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         toolbar.setTitle("CSI");
                         //toolbar.setSubtitle("Расчёт CSI");
+                        tabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.blue));
+                        tabs.setTabTextColors(
+                                getResources().getColor(R.color.siteGray),
+                                getResources().getColor(R.color.blue));
                         break;
                     case 1:
                         toolbar.setTitle("Высокие оценки");
                         //toolbar.setSubtitle("Расчёт количества высоких оценок");
+                        tabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.green_dark));
+                        tabs.setTabTextColors(
+                                getResources().getColor(R.color.siteGray),
+                                getResources().getColor(R.color.green_dark));
                         break;
                     case 2:
                         toolbar.setTitle("КПЭ");
                         //toolbar.setSubtitle("Расчёт КПЭ");
+                        tabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.orange_darkly));
+                        tabs.setTabTextColors(
+                                getResources().getColor(R.color.siteGray),
+                                getResources().getColor(R.color.orange_darkly));
                         break;
                 }
             }
@@ -59,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(fragmentStateAdapter);
         pager.setCurrentItem(1);
 
-        tabs = findViewById(R.id.tabs);
+
         tabMediator = new TabLayoutMediator(tabs, pager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
