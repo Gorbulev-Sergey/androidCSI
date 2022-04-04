@@ -1,5 +1,7 @@
 package com.example.androidcsi.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,16 +20,18 @@ public class highRatingFragment extends Fragment {
     NumberPicker pickerLowRating;
     NumberPicker pickerCSI;
     TextView textResult;
+    SharedPreferences preferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        preferences = this.getActivity().getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
         view = inflater.inflate(R.layout.fragment_high_rating, container, false);
         textResult = view.findViewById(R.id.textResult);
 
         pickerLowRating = view.findViewById(R.id.picker_low_rating);
         pickerLowRating.setMinValue(0);
-        pickerLowRating.setMaxValue(100);
+        pickerLowRating.setMaxValue(Integer.parseInt(preferences.getString("ratingCount", "100")));
         pickerCSI = view.findViewById(R.id.picker_CSI);
         pickerCSI.setMinValue(0);
         pickerCSI.setMaxValue(100);
@@ -47,6 +51,12 @@ public class highRatingFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        pickerLowRating.setMaxValue(Integer.parseInt(preferences.getString("ratingCount", "100")));
+        super.onResume();
     }
 
     private int getResult(double CSI, double LowRating) {

@@ -39,7 +39,8 @@ public class SettingsActivity extends AppCompatActivity {
     public static class SettingsFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey);
+            getPreferenceManager().setSharedPreferencesName("my_preferences");
+            addPreferencesFromResource(R.xml.my_preferences);
         }
     }
 }

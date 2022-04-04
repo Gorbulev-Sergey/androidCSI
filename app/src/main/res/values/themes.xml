@@ -49,6 +49,7 @@
         <item name="colorOnSecondary">@color/siteDark</item>
 
         <item name="statusBarForeground">@color/gray_black</item>
+        <item name="colorAccent">@color/green_dark</item>
     </style>
 
     <style name="Theme.AndroidCSI.Orange" parent="Theme.AndroidCSI">
