@@ -88,9 +88,14 @@
         <item name="colorControlNormal">@color/purpul_blue</item>
     </style>
 
+    <style name="Theme.AndroidCSI.Blue.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/blue</item>
+        <item name="colorControlNormal">@color/blue</item>
+    </style>
+
     <style name="Theme.AndroidCSI.Red.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
-        <item name="android:textColorPrimary">@color/red_dark</item>
-        <item name="colorControlNormal">@color/red_dark</item>
+        <item name="android:textColorPrimary">@color/red_darkly</item>
+        <item name="colorControlNormal">@color/red_darkly</item>
     </style>
 
     <style name="Theme.AndroidCSI.Pink.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
@@ -99,8 +104,8 @@
     </style>
 
     <style name="Theme.AndroidCSI.Green.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
-        <item name="android:textColorPrimary">@color/green_high_dark</item>
-        <item name="colorControlNormal">@color/green_high_dark</item>
+        <item name="android:textColorPrimary">@color/green_dark</item>
+        <item name="colorControlNormal">@color/green_dark</item>
     </style>
 
     <style name="Theme.AndroidCSI.Orange.Picker" parent="Theme.AppCompat.Light.NoActionBar" >

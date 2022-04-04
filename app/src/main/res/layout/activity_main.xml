@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:titleTextAppearance="@style/Toolbar.MyStyle"
         android:background="?attr/colorPrimary"
-        app:titleTextColor="@color/magnolia"
+        app:titleTextColor="@color/white"
         app:subtitleTextColor="?attr/colorSecondary"/>
 
     <LinearLayout

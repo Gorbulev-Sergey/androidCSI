@@ -54,14 +54,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/purpul_blue"
+                android:textColor="@color/green_high_dark"
                 android:text="Высокие\nоценки:" />
 
             <NumberPicker
                 android:id="@+id/picker_high_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.PurpulBlue.Picker"/>
+                android:theme="@style/Theme.AndroidCSI.Green.Picker"/>
         </LinearLayout>
 
         <LinearLayout
@@ -77,14 +77,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/violet"
+                android:textColor="@color/red_darkly"
                 android:text="Низкие\nоценки:" />
 
             <NumberPicker
                 android:id="@+id/picker_low_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.Violet.Picker"/>
+                android:theme="@style/Theme.AndroidCSI.Red.Picker"/>
         </LinearLayout>
 
     </LinearLayout>
