@@ -8,6 +8,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.androidcsi.fragments.CSIFragment;
 import com.example.androidcsi.fragments.highRatingFragment;
@@ -90,5 +92,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         tabMediator.attach();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.action_settings){
+            startActivity(new Intent(this, SettingsActivity.class));
+        }
+        return true;
     }
 }
