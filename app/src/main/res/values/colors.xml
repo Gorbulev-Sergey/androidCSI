@@ -66,4 +66,9 @@
     <color name="rouse">#FC85AE</color>
     <color name="rouse_dark">#82032f</color>
     <color name="magnolia">#FEF0FF</color>
+
+    <color name="siteDark">#343a40</color>
+    <color name="siteGray">#6c757d</color>
+    <color name="siteLightGray">#e9ecef</color>
+    <color name="siteLight">#f8f9fa</color>
 </resources>

@@ -40,13 +40,13 @@
 
     <style name="Theme.AndroidCSI.Gray" parent="Theme.AndroidCSI">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/gray_high_dark</item>
-        <item name="colorOnPrimary">@color/gray_black</item>
+        <item name="colorPrimary">@color/siteDark</item>
+        <item name="colorPrimaryVariant">@color/siteGray</item>
+        <item name="colorOnPrimary">@color/siteLight</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/gray_white</item>
-        <item name="colorSecondaryVariant">@color/gray_high_dark</item>
-        <item name="colorOnSecondary">@color/gray_black</item>
+        <item name="colorSecondary">@color/siteLightGray</item>
+        <item name="colorSecondaryVariant">@color/siteGray</item>
+        <item name="colorOnSecondary">@color/siteDark</item>
 
         <item name="statusBarForeground">@color/gray_black</item>
     </style>
@@ -106,5 +106,9 @@
     <style name="Theme.AndroidCSI.Orange.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:textColorPrimary">@color/orange_high_dark</item>
         <item name="colorControlNormal">@color/orange_high_dark</item>
+    </style>
+
+    <style name="Toolbar.MyStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
     </style>
 </resources>
