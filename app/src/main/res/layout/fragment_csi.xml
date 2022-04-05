@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/green_high_dark"
+                android:textColor="@color/green_dark"
                 android:text="Высокие\nоценки:" />
 
             <NumberPicker
@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/red_darkly"
+                android:textColor="@color/red_lightly"
                 android:text="Низкие\nоценки:" />
 
             <NumberPicker

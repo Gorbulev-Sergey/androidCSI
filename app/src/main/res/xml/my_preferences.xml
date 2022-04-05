@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="Основные настройки">
 
@@ -7,6 +8,7 @@
             app:title="Колличество оценок"
             app:summary="Максимальное колличество оценок"
             app:defaultValue="100"
+            android:inputType="number"
             app:useSimpleSummaryProvider="true"/>
 
         <EditTextPreference
@@ -14,6 +16,7 @@
             app:title="Колличество талонов"
             app:summary="Максимальное колличество талонов"
             app:defaultValue="150"
+            android:inputType="number"
             app:useSimpleSummaryProvider="true"/>
 
     </PreferenceCategory>

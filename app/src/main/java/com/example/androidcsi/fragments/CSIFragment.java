@@ -58,6 +58,7 @@ public class CSIFragment extends Fragment {
     public void onResume() {
         pickerHighRating.setMaxValue(Integer.parseInt(preferences.getString("ratingCount", "100")));
         pickerLowRating.setMaxValue(Integer.parseInt(preferences.getString("ratingCount", "100")));
+
         super.onResume();
     }
 

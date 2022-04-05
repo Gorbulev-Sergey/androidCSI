@@ -68,7 +68,7 @@
     <color name="magnolia">#FEF0FF</color>
 
     <color name="siteDark">#343a40</color>
-    <color name="siteGray">#6c757d</color>
-    <color name="siteLightGray">#e9ecef</color>
-    <color name="siteLight">#f8f9fa</color>
+    <color name="siteGray">#AA6c757d</color>
+    <color name="siteLightGray">#AAe9ecef</color>
+    <color name="siteLight">#AAf8f9fa</color>
 </resources>

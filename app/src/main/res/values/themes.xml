@@ -52,6 +52,13 @@
         <item name="colorAccent">@color/green_dark</item>
     </style>
 
+    <style name="Theme.AndroidCSI.Gray.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/siteLight</item>
+        <item name="tabIndicatorColor">@color/green_dark</item>
+        <item name="tabSelectedTextColor">@color/green_dark</item>
+        <item name="tabTextColor">@color/siteGray</item>
+    </style>
+
     <style name="Theme.AndroidCSI.Orange" parent="Theme.AndroidCSI">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/orange_high_dark</item>
@@ -95,8 +102,8 @@
     </style>
 
     <style name="Theme.AndroidCSI.Red.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
-        <item name="android:textColorPrimary">@color/red_darkly</item>
-        <item name="colorControlNormal">@color/red_darkly</item>
+        <item name="android:textColorPrimary">@color/red_lightly</item>
+        <item name="colorControlNormal">@color/red_lightly</item>
     </style>
 
     <style name="Theme.AndroidCSI.Pink.Picker" parent="Theme.AppCompat.Light.NoActionBar" >

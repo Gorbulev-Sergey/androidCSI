@@ -10,7 +10,31 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Gray" parent="Theme.AndroidCSI">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/siteDark</item>
+        <item name="colorPrimaryVariant">@color/siteGray</item>
+        <item name="colorOnPrimary">@color/siteLight</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/siteLightGray</item>
+        <item name="colorSecondaryVariant">@color/siteGray</item>
+        <item name="colorOnSecondary">@color/siteDark</item>
+
+        <item name="statusBarForeground">@color/gray_black</item>
+        <item name="colorAccent">@color/green_dark</item>
+        <item name="android:windowBackground">@color/siteGray</item>
+    </style>
+
+    <style name="Theme.AndroidCSI.Gray.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/siteDark</item>
+        <item name="tabIndicatorColor">@color/green_dark</item>
+        <item name="tabSelectedTextColor">@color/green_dark</item>
+        <item name="tabTextColor">@color/siteGray</item>
     </style>
 </resources>
