@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 public class DialogFragment extends AppCompatDialogFragment {
     com.example.mylibrary.DialogInterface dialogInterface;
 
-    public DialogFragment(com.example.mylibrary.DialogInterface dialogInterface){
+    public DialogFragment(com.example.mylibrary.DialogInterface dialogInterface) {
         this.dialogInterface = dialogInterface;
     }
 
@@ -31,7 +31,7 @@ public class DialogFragment extends AppCompatDialogFragment {
         builder.setTitle(getArguments().getString("title").isEmpty() ? "Задать значение" : getArguments().getString("title"))
                 .setView(viewLayout)
                 .setPositiveButton("Ok", (DialogInterface dialog, int i) -> {
-                    dialogInterface.setValue(Integer.valueOf(viewEditText.getText().toString()));
+                    dialogInterface.setValue(viewEditText.getText().toString().isEmpty() ? 0 : Integer.valueOf(viewEditText.getText().toString()));
                     Toast.makeText(getActivity(), "Значение изменено", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Отмена", (DialogInterface dialog, int i) -> {
