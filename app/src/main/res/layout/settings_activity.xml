@@ -15,8 +15,11 @@
         app:title="Настройки"
         app:navigationIcon="@drawable/ic_back"/>
 
-    <FrameLayout
-        android:id="@+id/settings"
+    <LinearLayout
+        android:id="@+id/containerSettings"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
 </LinearLayout>

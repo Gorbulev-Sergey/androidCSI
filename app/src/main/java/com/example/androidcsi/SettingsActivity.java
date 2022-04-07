@@ -1,23 +1,14 @@
 package com.example.androidcsi;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.EditTextPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
 
-import com.example.androidcsi.fragments.SettingsFragment;
+import com.example.mylibrary.DialogFragment;
+import com.example.mylibrary.PreferenceView;
 
 public class SettingsActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -31,13 +22,6 @@ public class SettingsActivity extends AppCompatActivity {
         toolbar.setTitle("Настройки");
         setSupportActionBar(toolbar);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.settings, new SettingsFragment())
-                    .commit();
-        }
-
         getSharedPreferences("my_preferences", MODE_PRIVATE)
                 .registerOnSharedPreferenceChangeListener((sharedPreferences, s) -> {
                     if (sharedPreferences.getString(s, "0").isEmpty()) {
@@ -45,6 +29,32 @@ public class SettingsActivity extends AppCompatActivity {
                         sharedPreferences.edit().putInt("talonCount", 150).apply();
                     }
                 });
+
+        LinearLayout container = findViewById(R.id.containerSettings);
+        PreferenceView preferenceCountRating = new PreferenceView(this) {{
+            ((TextView) getTextTitle()).setText("Количество оценок");
+            ((TextView) getTextSubtitle()).setText("Максимальное количество оценок");
+            ((TextView) getTextValue()).setText("100");
+
+            DialogFragment dialog = new DialogFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("title","rrrrrrrrrrrrrrrrrr");
+            dialog.setArguments(bundle);
+
+            setOnClickListener((view -> {
+                //dialog.show(getSupportFragmentManager(), "dialogRating");
+            }));
+        }};
+        PreferenceView preferenceCountTalons = new PreferenceView(this) {{
+            ((TextView) getTextTitle()).setText("Количество талонов");
+            ((TextView) getTextSubtitle()).setText("Максимальное количество талонов");
+            ((TextView) getTextValue()).setText("150");
+            setOnClickListener((view -> {
+                //new DialogFragment().show(getSupportFragmentManager(), "dialogTalons");
+            }));
+        }};
+        container.addView(preferenceCountRating);
+        container.addView(preferenceCountTalons);
     }
 
     @Override
