@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/androidCSI/app/mylibrary/src/main/res/layout/dialog.xml" value="0.25" />
+        <entry key="..\:/Android/androidCSI/app/mylibrary/src/main/res/layout/my_view.xml" value="0.25" />
+        <entry key="..\:/Android/androidCSI/app/mylibrary/src/main/res/layout/preference.xml" value="0.25" />
         <entry key="..\:/Android/androidCSI/app/src/main/res/drawable-v24/radius_purpul_blue.xml" value="0.1" />
         <entry key="..\:/Android/androidCSI/app/src/main/res/drawable-v24/radius_rouse.xml" value="0.1" />
         <entry key="..\:/Android/androidCSI/app/src/main/res/drawable-v24/radius_voilet.xml" value="0.1" />

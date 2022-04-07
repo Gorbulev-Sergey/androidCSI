@@ -1,19 +1,23 @@
 package com.example.androidcsi;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.EditTextPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 
-import com.takisoft.preferencex.PreferenceFragmentCompat;
+import com.example.androidcsi.fragments.SettingsFragment;
 
 public class SettingsActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -33,42 +37,19 @@ public class SettingsActivity extends AppCompatActivity {
                     .replace(R.id.settings, new SettingsFragment())
                     .commit();
         }
+
+        getSharedPreferences("my_preferences", MODE_PRIVATE)
+                .registerOnSharedPreferenceChangeListener((sharedPreferences, s) -> {
+                    if (sharedPreferences.getString(s, "0").isEmpty()) {
+                        sharedPreferences.edit().putInt("ratingCount", 100).apply();
+                        sharedPreferences.edit().putInt("talonCount", 150).apply();
+                    }
+                });
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
-    }
-
-    public static class SettingsFragment extends PreferenceFragmentCompat {
-        EditTextPreference preferenceRatingCount;
-        EditTextPreference preferenceTalonCount;
-
-        @Override
-        public void onCreatePreferencesFix(Bundle savedInstanceState, String rootKey) {
-            getPreferenceManager().setSharedPreferencesName("my_preferences");
-            addPreferencesFromResource(R.xml.my_preferences);
-
-            preferenceRatingCount = findPreference("ratingCount");
-            preferenceTalonCount = findPreference("talonCount");
-        }
-
-        @Override
-        public void onDisplayPreferenceDialog(Preference preference) {
-            preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(@NonNull Preference preference) {
-                    if(preference==preferenceRatingCount && ((EditTextPreference)preference).getText()==null){
-                        ((EditTextPreference)preference).setText("100");
-                    }
-                    if(preference==preferenceTalonCount && ((EditTextPreference)preference).getText()==null){
-                        ((EditTextPreference)preference).setText("150");
-                    }
-                    return false;
-                }
-            });
-            super.onDisplayPreferenceDialog(preference);
-        }
     }
 }
