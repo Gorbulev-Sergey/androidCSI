@@ -35,23 +35,11 @@ public class SettingsActivity extends AppCompatActivity {
             ((TextView) getTextTitle()).setText("Количество оценок");
             ((TextView) getTextSubtitle()).setText("Максимальное количество оценок");
             ((TextView) getTextValue()).setText("100");
-
-            DialogFragment dialog = new DialogFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("title","rrrrrrrrrrrrrrrrrr");
-            dialog.setArguments(bundle);
-
-            setOnClickListener((view -> {
-                //dialog.show(getSupportFragmentManager(), "dialogRating");
-            }));
         }};
         PreferenceView preferenceCountTalons = new PreferenceView(this) {{
             ((TextView) getTextTitle()).setText("Количество талонов");
             ((TextView) getTextSubtitle()).setText("Максимальное количество талонов");
             ((TextView) getTextValue()).setText("150");
-            setOnClickListener((view -> {
-                //new DialogFragment().show(getSupportFragmentManager(), "dialogTalons");
-            }));
         }};
         container.addView(preferenceCountRating);
         container.addView(preferenceCountTalons);

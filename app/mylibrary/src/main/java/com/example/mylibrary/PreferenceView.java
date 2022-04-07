@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PreferenceView extends LinearLayout {
+public class PreferenceView extends LinearLayout implements DialogInterface{
     TextView textTitle;
     TextView textSubtitle;
     TextView textValue;
@@ -22,13 +22,13 @@ public class PreferenceView extends LinearLayout {
         textSubtitle = findViewById(R.id.textSubtitle);
         textValue = findViewById(R.id.textResult);
 
-        textTitle.setOnClickListener((view -> {
+        setOnClickListener((view -> {
             Bundle bundle = new Bundle();
             bundle.putString("title", textTitle.getText().toString());
             bundle.putString("subtitle", textSubtitle.getText().toString());
             bundle.putInt("value", Integer.valueOf(textValue.getText().toString()));
 
-            DialogFragment dialog = new DialogFragment();
+            DialogFragment dialog = new DialogFragment(this);
             dialog.setArguments(bundle);
             dialog.show(((AppCompatActivity)context).getSupportFragmentManager(), "fragment");
         }));
@@ -44,5 +44,10 @@ public class PreferenceView extends LinearLayout {
 
     public TextView getTextValue() {
         return textValue;
+    }
+
+    @Override
+    public void setValue(int value) {
+        textValue.setText(Integer.toString(value));
     }
 }
