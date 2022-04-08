@@ -1,6 +1,9 @@
 package com.example.androidcsi;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,35 +14,29 @@ import com.example.mylibrary.DialogFragment;
 import com.example.mylibrary.PreferenceView;
 
 public class SettingsActivity extends AppCompatActivity {
+    SharedPreferences preferences;
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        preferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
 
         toolbar = findViewById(R.id.toolbarSettings);
         toolbar.setTitle("Настройки");
         setSupportActionBar(toolbar);
 
-        getSharedPreferences("my_preferences", MODE_PRIVATE)
-                .registerOnSharedPreferenceChangeListener((sharedPreferences, s) -> {
-                    if (sharedPreferences.getString(s, "0").isEmpty()) {
-                        sharedPreferences.edit().putInt("ratingCount", 100).apply();
-                        sharedPreferences.edit().putInt("talonCount", 150).apply();
-                    }
-                });
-
         LinearLayout container = findViewById(R.id.containerSettings);
-        PreferenceView preferenceCountRating = new PreferenceView(this) {{
+        PreferenceView preferenceCountRating = new PreferenceView(this, "ratingCount") {{
             ((TextView) getTextTitle()).setText("Количество оценок");
             ((TextView) getTextSubtitle()).setText("Максимальное количество оценок");
-            ((TextView) getTextValue()).setText("100");
+            ((TextView) getTextValue()).setText(preferences.getString("ratingCount","100"));
         }};
-        PreferenceView preferenceCountTalons = new PreferenceView(this) {{
+        PreferenceView preferenceCountTalons = new PreferenceView(this,"talonCount") {{
             ((TextView) getTextTitle()).setText("Количество талонов");
             ((TextView) getTextSubtitle()).setText("Максимальное количество талонов");
-            ((TextView) getTextValue()).setText("150");
+            ((TextView) getTextValue()).setText(preferences.getString("talonCount","150"));
         }};
         container.addView(preferenceCountRating);
         container.addView(preferenceCountTalons);

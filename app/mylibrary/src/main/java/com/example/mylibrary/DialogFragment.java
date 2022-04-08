@@ -1,9 +1,13 @@
 package com.example.mylibrary;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -16,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogFragment extends AppCompatDialogFragment {
+    SharedPreferences preferences;
     PreferenceView preference;
 
     public DialogFragment(PreferenceView preference) {
@@ -25,6 +30,7 @@ public class DialogFragment extends AppCompatDialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        preferences = getActivity().getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
         View view = getLayoutInflater().inflate(R.layout.dialog, null);
         EditText editText = view.findViewById(R.id.editText);
         editText.setText(((TextView) preference.findViewById(R.id.textValue)).getText().toString().isEmpty() ? "0" : ((TextView) preference.findViewById(R.id.textValue)).getText().toString());
@@ -37,7 +43,7 @@ public class DialogFragment extends AppCompatDialogFragment {
 
             @Override
             public void onTextChanged(CharSequence chrSequence, int i, int i1, int i2) {
-                if(chrSequence.toString().isEmpty()) editText.setText("0");
+                if (chrSequence.toString().isEmpty()) editText.setText("0");
             }
 
             @Override
@@ -46,10 +52,11 @@ public class DialogFragment extends AppCompatDialogFragment {
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(((TextView)preference.findViewById(R.id.textTitle)).getText().toString().isEmpty() ? "Задать значение" : ((TextView)preference.findViewById(R.id.textTitle)).getText().toString())
+        builder.setTitle(((TextView) preference.findViewById(R.id.textTitle)).getText().toString().isEmpty() ? "Задать значение" : ((TextView) preference.findViewById(R.id.textTitle)).getText().toString())
                 .setView(view)
                 .setPositiveButton("Ok", (DialogInterface dialog, int i) -> {
-                    ((TextView)preference.findViewById(R.id.textValue)).setText(editText.getText());
+                    ((TextView) preference.findViewById(R.id.textValue)).setText(Integer.valueOf(editText.getText().toString()).toString());
+                    preferences.edit().putString(preference.preferenceKeyName, editText.getText().toString()).apply();
                     Toast.makeText(getActivity(), "Значение изменено", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Отмена", (DialogInterface dialog, int i) -> {
