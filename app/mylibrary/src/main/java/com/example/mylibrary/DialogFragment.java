@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,9 +33,12 @@ public class DialogFragment extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         preferences = getActivity().getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
         View view = getLayoutInflater().inflate(R.layout.dialog, null);
+
         EditText editText = view.findViewById(R.id.editText);
         editText.setText(((TextView) preference.findViewById(R.id.textValue)).getText().toString().isEmpty() ? "0" : ((TextView) preference.findViewById(R.id.textValue)).getText().toString());
         editText.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -57,9 +61,11 @@ public class DialogFragment extends AppCompatDialogFragment {
                 .setPositiveButton("Ok", (DialogInterface dialog, int i) -> {
                     ((TextView) preference.findViewById(R.id.textValue)).setText(Integer.valueOf(editText.getText().toString()).toString());
                     preferences.edit().putString(preference.preferenceKeyName, editText.getText().toString()).apply();
+                    imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
                     Toast.makeText(getActivity(), "Значение изменено", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Отмена", (DialogInterface dialog, int i) -> {
+                    imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
                     dialog.cancel();
                 })
                 .setCancelable(true);
