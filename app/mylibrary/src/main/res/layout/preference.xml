@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="62dp"
         android:textStyle="bold"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:text="Задать значение"/>
 
     <TextView
         android:id="@+id/textSubtitle"
@@ -21,11 +22,12 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/textResult"
+        android:id="@+id/textValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="62dp"
         android:textStyle="bold"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:text="0"/>
 
 </LinearLayout>

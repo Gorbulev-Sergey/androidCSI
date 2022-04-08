@@ -8,29 +8,22 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PreferenceView extends LinearLayout implements DialogInterface{
+public class PreferenceView extends LinearLayout{
     TextView textTitle;
     TextView textSubtitle;
     TextView textValue;
 
     public PreferenceView(Context context) {
         super(context);
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.preference, this);
+        LayoutInflater layout = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        layout.inflate(R.layout.preference, this);
 
         textTitle = findViewById(R.id.textTitle);
         textSubtitle = findViewById(R.id.textSubtitle);
-        textValue = findViewById(R.id.textResult);
+        textValue = findViewById(R.id.textValue);
 
         setOnClickListener((view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("title", textTitle.getText().toString());
-            bundle.putString("subtitle", textSubtitle.getText().toString());
-            bundle.putInt("value", Integer.valueOf(textValue.getText().toString()));
-
-            DialogFragment dialog = new DialogFragment(this);
-            dialog.setArguments(bundle);
-            dialog.show(((AppCompatActivity)context).getSupportFragmentManager(), "fragment");
+            new DialogFragment(this).show(((AppCompatActivity) context).getSupportFragmentManager(), "fragment");
         }));
     }
 
@@ -44,10 +37,5 @@ public class PreferenceView extends LinearLayout implements DialogInterface{
 
     public TextView getTextValue() {
         return textValue;
-    }
-
-    @Override
-    public void setValue(int value) {
-        textValue.setText(Integer.toString(value));
     }
 }
