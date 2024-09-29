@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Высокие оценки");
+        toolbar.setTitle("CSI");
         setSupportActionBar(toolbar);
         tabs = findViewById(R.id.tabs);
 
@@ -50,14 +50,6 @@ public class MainActivity extends AppCompatActivity {
                                 getResources().getColor(R.color.blue));
                         break;
                     case 1:
-                        toolbar.setTitle("Высокие оценки");
-                        //toolbar.setSubtitle("Расчёт количества высоких оценок");
-                        tabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.green_dark));
-                        tabs.setTabTextColors(
-                                getResources().getColor(R.color.siteGray),
-                                getResources().getColor(R.color.green_dark));
-                        break;
-                    case 2:
                         toolbar.setTitle("КПЭ");
                         //toolbar.setSubtitle("Расчёт КПЭ");
                         tabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.orange_darkly));
@@ -70,10 +62,9 @@ public class MainActivity extends AppCompatActivity {
         });
         fragmentStateAdapter = new MyFragmentStateAdapter(getSupportFragmentManager(), getLifecycle());
         fragmentStateAdapter.addFragment(new CSIFragment());
-        fragmentStateAdapter.addFragment(new highRatingFragment());
         fragmentStateAdapter.addFragment(new kpeFragment());
         pager.setAdapter(fragmentStateAdapter);
-        pager.setCurrentItem(1);
+        pager.setCurrentItem(0);
 
 
         tabMediator = new TabLayoutMediator(tabs, pager, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -84,9 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         tab.setText("CSI");
                         break;
                     case 1:
-                        tab.setText("Высокие оценки");
-                        break;
-                    case 2:
                         tab.setText("КПЭ");
                         break;
                 }

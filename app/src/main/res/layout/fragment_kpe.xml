@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="12dp"
-            android:layout_marginRight="6dp"
+            android:layout_marginRight="5dp"
             android:background="@drawable/radius_green30"
             android:gravity="center">
 
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="12dp"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="5dp"
             android:background="@drawable/radius_red30"
             android:gravity="center">
 

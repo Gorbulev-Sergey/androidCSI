@@ -37,63 +37,102 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="top"
-        android:paddingTop="50dp"
+        android:orientation="vertical"
         android:layout_weight="2">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:layout_marginRight="6dp"
-            android:background="@drawable/radius_gray_left30"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:paddingTop="50dp"
+            android:layout_weight="1">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/blue"
-                android:text="CSI:" />
+                android:padding="12dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/radius_gray_left30"
+                android:layout_weight="1"
+                android:gravity="center">
 
-            <NumberPicker
-                android:id="@+id/picker_CSI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.Blue.Picker"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/green"
+                    android:text="CSI:" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/blue"
-                android:text="%" />
+                <NumberPicker
+                    android:id="@+id/picker_CSI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.AndroidCSI.Green.Picker"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/green"
+                    android:text="%" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="12dp"
-            android:layout_marginLeft="6dp"
-            android:background="@drawable/radius_gray_right30"
-            android:gravity="center">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:paddingTop="50dp"
+            android:layout_weight="1">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/red_lightly"
-                android:text="Низкие\nоценки:" />
+                android:padding="12dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/radius_gray_left30"
+                android:layout_weight="1"
+                android:gravity="center">
 
-            <NumberPicker
-                android:id="@+id/picker_low_rating"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/blue"
+                    android:text="Нейтральные\nоценки" />
+
+                <NumberPicker
+                    android:id="@+id/picker_neutral_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.AndroidCSI.Blue.Picker"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.AndroidCSI.Red.Picker"/>
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/radius_gray_right30"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/red_lightly"
+                    android:text="Низкие\nоценки:" />
+
+                <NumberPicker
+                    android:id="@+id/picker_low_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.AndroidCSI.Red.Picker"/>
+            </LinearLayout>
+
         </LinearLayout>
-
 
     </LinearLayout>
 
